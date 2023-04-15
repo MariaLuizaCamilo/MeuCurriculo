@@ -1,7 +1,7 @@
 import React from "react";
 import{View, Text, Button} from 'react-native'
 
-const Sobre = ([Navigation]) => {
+const Sobre = ({navigation}) => {
     return(
         <View> 
             <Text> Sobre mim</Text>
