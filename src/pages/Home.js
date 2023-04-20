@@ -1,6 +1,7 @@
 import React from "react";
 import{View, Text, Button, Image, StyleSheet} from 'react-native'
 import { ImageBackground } from "react-native-web";
+import Botao from "../componentes/Botao";
 
 const Home = ({navigation}) => {
     return(
@@ -10,31 +11,34 @@ const Home = ({navigation}) => {
 
             <Image  style={estilo.Image} source={require('../imagens/download.jpg')}/>
 
-           <Button  style={estilo.botaoum}
-                title="Sobre"
-                onPress={ () => navigation.navigate('Sobre') }
-           />
-
-            <Button
-                title="Habilidade"
-                onPress={ () => navigation.navigate('Habilidade') }
-           />
-
-          <Button
-            title="Formação"
-            onPress={ () => navigation.navigate('Formação') }
-           />
+        <View style={estilo.botoes}>
+                <Botao titulo="Sobre" acao={ () => navigation.navigate('Sobre') } />  
         </View>
-    
+
+        <View style={estilo.botoes}>
+                <Botao titulo="Habilidade" acao={ () => navigation.navigate('Habilidade') } />  
+        </View>
+
+        <View style={estilo.botoes}>
+                <Botao titulo="Formação" acao={ () => navigation.navigate('Formacao') } />  
+        </View>
+       
+
+       
+    </View>     
     );
 }
 
 const estilo = StyleSheet.create({
 
-    botaoum:{
-        fontSize:25,
-
+    botoes:{
+        textAlign:"center",
+        fontSize:"30px",
+        borderRadius:"5px",
+        
     },
+
+
 
     titulo: {
         textAlign:"center",
